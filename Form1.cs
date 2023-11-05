@@ -22,9 +22,28 @@ namespace WindowsFormsApp1
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+       
 
+        private void login_Btn_Click(object sender, EventArgs e)
+        {
+            if(string.Equals(username_TxtBox.Text, "username") && string.Equals(password_TxtBox.Text, "password")) {
+
+                this.Hide();
+                Form2 form2 = new Form2();
+                form2.ShowDialog();
+                form2.Show();
+               
+            }
+             
+            else
+            {
+                MessageBox.Show("Inavalid login");
+            }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
