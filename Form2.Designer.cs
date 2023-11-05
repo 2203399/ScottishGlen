@@ -57,6 +57,7 @@
             this.add_Btn.TabIndex = 1;
             this.add_Btn.Text = "Add";
             this.add_Btn.UseVisualStyleBackColor = false;
+            this.add_Btn.Click += new System.EventHandler(this.add_Btn_Click);
             // 
             // edit_Btn
             // 
@@ -68,6 +69,7 @@
             this.edit_Btn.TabIndex = 2;
             this.edit_Btn.Text = "Edit";
             this.edit_Btn.UseVisualStyleBackColor = false;
+            this.edit_Btn.Click += new System.EventHandler(this.edit_Btn_Click);
             // 
             // logout_Btn
             // 
@@ -79,6 +81,7 @@
             this.logout_Btn.TabIndex = 3;
             this.logout_Btn.Text = "Logout";
             this.logout_Btn.UseVisualStyleBackColor = false;
+            this.logout_Btn.Click += new System.EventHandler(this.logout_Btn_Click);
             // 
             // delete_Btn
             // 
@@ -90,6 +93,7 @@
             this.delete_Btn.TabIndex = 4;
             this.delete_Btn.Text = "Delete";
             this.delete_Btn.UseVisualStyleBackColor = false;
+            this.delete_Btn.Click += new System.EventHandler(this.delete_Btn_Click);
             // 
             // Form2
             // 
@@ -104,6 +108,7 @@
             this.Controls.Add(this.display_Btn);
             this.Name = "Form2";
             this.Text = "Form2";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
             this.ResumeLayout(false);
 
         }

@@ -1,4 +1,4 @@
-﻿using MySql.Data.MySqlClient;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -91,6 +91,11 @@ namespace WindowsFormsApp1
                     }
                 }
             }
+        }
+
+        private void Form3_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

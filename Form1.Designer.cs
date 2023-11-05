@@ -47,6 +47,7 @@ namespace WindowsFormsApp1
             this.login_Btn.TabIndex = 0;
             this.login_Btn.Text = "Login";
             this.login_Btn.UseVisualStyleBackColor = false;
+            this.login_Btn.Click += new System.EventHandler(this.login_Btn_Click);
             // 
             // username_Lbl
             // 
@@ -80,7 +81,8 @@ namespace WindowsFormsApp1
             this.password_TxtBox.Size = new System.Drawing.Size(100, 20);
             this.password_TxtBox.TabIndex = 4;
             // 
-           
+            // Form1
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -91,6 +93,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.username_Lbl);
             this.Controls.Add(this.login_Btn);
             this.Name = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,11 +103,7 @@ namespace WindowsFormsApp1
 
         #endregion
 
-        private System.Windows.Forms.TextBox password_Textbox;
-        private System.Windows.Forms.TextBox username_Textbox;
-        private System.Windows.Forms.Button login_Button;
-        private System.Windows.Forms.Label username_Label;
-        private System.Windows.Forms.Label password_label;
+      
         private Button login_Btn;
         private Label username_Lbl;
         private Label password_lbl;
