@@ -80,6 +80,105 @@
             // 
             // Form1
             // 
+            this.password_label.AutoSize = true;
+            this.password_label.Location = new System.Drawing.Point(264, 222);
+            this.password_label.Name = "password_label";
+            this.password_label.Size = new System.Drawing.Size(53, 13);
+            this.password_label.TabIndex = 4;
+            this.password_label.Text = "Password";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.password_label.AutoSize = true;
+            this.password_label.Location = new System.Drawing.Point(264, 222);
+            this.password_label.Name = "password_label";
+            this.password_label.Size = new System.Drawing.Size(53, 13);
+            this.password_label.TabIndex = 4;
+            this.password_label.Text = "Password";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.password_label.AutoSize = true;
+            this.password_label.Location = new System.Drawing.Point(264, 222);
+            this.password_label.Name = "password_label";
+            this.password_label.Size = new System.Drawing.Size(53, 13);
+            this.password_label.TabIndex = 4;
+            this.password_label.Text = "Password";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.password_label.AutoSize = true;
+            this.password_label.Location = new System.Drawing.Point(264, 222);
+            this.password_label.Name = "password_label";
+            this.password_label.Size = new System.Drawing.Size(53, 13);
+            this.password_label.TabIndex = 4;
+            this.password_label.Text = "Password";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.password_label.AutoSize = true;
+            this.password_label.Location = new System.Drawing.Point(264, 222);
+            this.password_label.Name = "password_label";
+            this.password_label.Size = new System.Drawing.Size(53, 13);
+            this.password_label.TabIndex = 4;
+            this.password_label.Text = "Password";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.password_label.AutoSize = true;
+            this.password_label.Location = new System.Drawing.Point(264, 222);
+            this.password_label.Name = "password_label";
+            this.password_label.Size = new System.Drawing.Size(53, 13);
+            this.password_label.TabIndex = 4;
+            this.password_label.Text = "Password";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.password_label.AutoSize = true;
+            this.password_label.Location = new System.Drawing.Point(264, 222);
+            this.password_label.Name = "password_label";
+            this.password_label.Size = new System.Drawing.Size(53, 13);
+            this.password_label.TabIndex = 4;
+            this.password_label.Text = "Password";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.password_label.AutoSize = true;
+            this.password_label.Location = new System.Drawing.Point(264, 222);
+            this.password_label.Name = "password_label";
+            this.password_label.Size = new System.Drawing.Size(53, 13);
+            this.password_label.TabIndex = 4;
+            this.password_label.Text = "Password";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.password_label.AutoSize = true;
+            this.password_label.Location = new System.Drawing.Point(264, 222);
+            this.password_label.Name = "password_label";
+            this.password_label.Size = new System.Drawing.Size(53, 13);
+            this.password_label.TabIndex = 4;
+            this.password_label.Text = "Password";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(776, 418);
             this.Controls.Add(this.password_TxtBox);
@@ -97,11 +196,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button login_Btn;
-        private System.Windows.Forms.Label username_Lbl;
-        private System.Windows.Forms.Label password_lbl;
-        private System.Windows.Forms.TextBox username_TxtBox;
-        private System.Windows.Forms.TextBox password_TxtBox;
+        private System.Windows.Forms.TextBox password_Textbox;
+        private System.Windows.Forms.TextBox username_Textbox;
+        private System.Windows.Forms.Button login_Button;
+        private System.Windows.Forms.Label username_Label;
+        private System.Windows.Forms.Label password_label;
+>>>>>>>>> Temporary merge branch 2
     }
 }
 
