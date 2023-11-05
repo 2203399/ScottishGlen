@@ -45,6 +45,7 @@
             this.display_Btn.TabIndex = 0;
             this.display_Btn.Text = "Display";
             this.display_Btn.UseVisualStyleBackColor = false;
+            this.display_Btn.Click += new System.EventHandler(this.display_Btn_Click);
             // 
             // add_Btn
             // 
