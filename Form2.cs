@@ -29,7 +29,10 @@ namespace WindowsFormsApp1
 
         private void add_Btn_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Form4 form4 = new Form4();
+            form4.ShowDialog();
+            form4.Show();
         }
 
         private void delete_Btn_Click(object sender, EventArgs e)
