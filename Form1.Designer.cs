@@ -1,4 +1,6 @@
-﻿namespace WindowsFormsApp1
+﻿using System.Windows.Forms;
+
+namespace WindowsFormsApp1
 {
     partial class Form1
     {
@@ -201,7 +203,11 @@
         private System.Windows.Forms.Button login_Button;
         private System.Windows.Forms.Label username_Label;
         private System.Windows.Forms.Label password_label;
->>>>>>>>> Temporary merge branch 2
+        private Button login_Btn;
+        private Label username_Lbl;
+        private Label password_lbl;
+        private TextBox username_TxtBox;
+        private TextBox password_TxtBox;
     }
 }
 
