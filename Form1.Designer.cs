@@ -93,6 +93,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.username_Lbl);
             this.Controls.Add(this.login_Btn);
             this.Name = "Form1";
+            this.Text = "Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();

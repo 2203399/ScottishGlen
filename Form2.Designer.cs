@@ -107,7 +107,7 @@
             this.Controls.Add(this.add_Btn);
             this.Controls.Add(this.display_Btn);
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Asset management";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
             this.ResumeLayout(false);
 
