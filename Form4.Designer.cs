@@ -49,6 +49,8 @@
             this.add_HAsset_Button = new System.Windows.Forms.Button();
             this.hardware_Panel = new System.Windows.Forms.Panel();
             this.software_Panel = new System.Windows.Forms.Panel();
+            this.sversion_Txtbox = new System.Windows.Forms.TextBox();
+            this.spurchase_Date_Lbl = new System.Windows.Forms.Label();
             this.license_Info_TxtBox = new System.Windows.Forms.TextBox();
             this.add_SAsset_Button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -64,8 +66,8 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.select_Asset_ComboBox = new System.Windows.Forms.ComboBox();
             this.select_Asset_Lbl = new System.Windows.Forms.Label();
-            this.spurchase_Date_Lbl = new System.Windows.Forms.Label();
-            this.sversion_Txtbox = new System.Windows.Forms.TextBox();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
             this.hardware_Panel.SuspendLayout();
             this.software_Panel.SuspendLayout();
             this.SuspendLayout();
@@ -225,6 +227,7 @@
             this.add_HAsset_Button.TabIndex = 25;
             this.add_HAsset_Button.Text = "Add";
             this.add_HAsset_Button.UseVisualStyleBackColor = false;
+            this.add_HAsset_Button.Click += new System.EventHandler(this.add_HAsset_Button_Click);
             // 
             // hardware_Panel
             // 
@@ -270,11 +273,27 @@
             this.software_Panel.Controls.Add(this.sname_TxtBox);
             this.software_Panel.Controls.Add(this.semployee_Id_Lbl);
             this.software_Panel.Controls.Add(this.textBox8);
-            this.software_Panel.Location = new System.Drawing.Point(652, 12);
+            this.software_Panel.Location = new System.Drawing.Point(310, 9);
             this.software_Panel.Name = "software_Panel";
             this.software_Panel.Size = new System.Drawing.Size(324, 438);
             this.software_Panel.TabIndex = 27;
             this.software_Panel.Visible = false;
+            // 
+            // sversion_Txtbox
+            // 
+            this.sversion_Txtbox.Location = new System.Drawing.Point(130, 97);
+            this.sversion_Txtbox.Name = "sversion_Txtbox";
+            this.sversion_Txtbox.Size = new System.Drawing.Size(100, 20);
+            this.sversion_Txtbox.TabIndex = 27;
+            // 
+            // spurchase_Date_Lbl
+            // 
+            this.spurchase_Date_Lbl.AutoSize = true;
+            this.spurchase_Date_Lbl.Location = new System.Drawing.Point(38, 212);
+            this.spurchase_Date_Lbl.Name = "spurchase_Date_Lbl";
+            this.spurchase_Date_Lbl.Size = new System.Drawing.Size(75, 13);
+            this.spurchase_Date_Lbl.TabIndex = 26;
+            this.spurchase_Date_Lbl.Text = "purchase date";
             // 
             // license_Info_TxtBox
             // 
@@ -293,6 +312,7 @@
             this.add_SAsset_Button.TabIndex = 25;
             this.add_SAsset_Button.Text = "Add";
             this.add_SAsset_Button.UseVisualStyleBackColor = false;
+            this.add_SAsset_Button.Click += new System.EventHandler(this.add_SAsset_Button_Click);
             // 
             // label1
             // 
@@ -405,21 +425,21 @@
             this.select_Asset_Lbl.TabIndex = 29;
             this.select_Asset_Lbl.Text = "Select asset";
             // 
-            // spurchase_Date_Lbl
+            // monthCalendar1
             // 
-            this.spurchase_Date_Lbl.AutoSize = true;
-            this.spurchase_Date_Lbl.Location = new System.Drawing.Point(38, 212);
-            this.spurchase_Date_Lbl.Name = "spurchase_Date_Lbl";
-            this.spurchase_Date_Lbl.Size = new System.Drawing.Size(75, 13);
-            this.spurchase_Date_Lbl.TabIndex = 26;
-            this.spurchase_Date_Lbl.Text = "purchase date";
+            this.monthCalendar1.Location = new System.Drawing.Point(43, 95);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 30;
+            this.monthCalendar1.Visible = false;
+            this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
             // 
-            // sversion_Txtbox
+            // monthCalendar2
             // 
-            this.sversion_Txtbox.Location = new System.Drawing.Point(130, 97);
-            this.sversion_Txtbox.Name = "sversion_Txtbox";
-            this.sversion_Txtbox.Size = new System.Drawing.Size(100, 20);
-            this.sversion_Txtbox.TabIndex = 27;
+            this.monthCalendar2.Location = new System.Drawing.Point(43, 95);
+            this.monthCalendar2.Name = "monthCalendar2";
+            this.monthCalendar2.TabIndex = 31;
+            this.monthCalendar2.Visible = false;
+            this.monthCalendar2.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar2_DateChanged);
             // 
             // Form4
             // 
@@ -427,6 +447,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1108, 490);
+            this.Controls.Add(this.monthCalendar2);
+            this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.select_Asset_Lbl);
             this.Controls.Add(this.select_Asset_ComboBox);
             this.Controls.Add(this.software_Panel);
@@ -483,5 +505,7 @@
         private System.Windows.Forms.Label select_Asset_Lbl;
         private System.Windows.Forms.TextBox sversion_Txtbox;
         private System.Windows.Forms.Label spurchase_Date_Lbl;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.MonthCalendar monthCalendar2;
     }
 }
