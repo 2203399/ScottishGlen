@@ -442,12 +442,25 @@
             this.monthCalendar2.Visible = false;
             this.monthCalendar2.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar2_DateChanged);
             // 
+            // back_Button
+            // 
+            this.back_Button.BackColor = System.Drawing.Color.SandyBrown;
+            this.back_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.back_Button.Location = new System.Drawing.Point(43, 423);
+            this.back_Button.Name = "back_Button";
+            this.back_Button.Size = new System.Drawing.Size(75, 23);
+            this.back_Button.TabIndex = 32;
+            this.back_Button.Text = "Back";
+            this.back_Button.UseVisualStyleBackColor = false;
+            this.back_Button.Click += new System.EventHandler(this.back_Button_Click_1);
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1108, 490);
+            this.Controls.Add(this.back_Button);
             this.Controls.Add(this.monthCalendar2);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.select_Asset_Lbl);
@@ -508,5 +521,6 @@
         private System.Windows.Forms.Label spurchase_Date_Lbl;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.MonthCalendar monthCalendar2;
+        private System.Windows.Forms.Button back_Button;
     }
 }

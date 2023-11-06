@@ -31,15 +31,15 @@
             this.display_Btn = new System.Windows.Forms.Button();
             this.add_Btn = new System.Windows.Forms.Button();
             this.edit_Btn = new System.Windows.Forms.Button();
-            this.logout_Btn = new System.Windows.Forms.Button();
             this.delete_Btn = new System.Windows.Forms.Button();
+            this.logout_Btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // display_Btn
             // 
             this.display_Btn.BackColor = System.Drawing.Color.SandyBrown;
             this.display_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.display_Btn.Location = new System.Drawing.Point(292, 67);
+            this.display_Btn.Location = new System.Drawing.Point(308, 143);
             this.display_Btn.Name = "display_Btn";
             this.display_Btn.Size = new System.Drawing.Size(75, 23);
             this.display_Btn.TabIndex = 0;
@@ -51,7 +51,7 @@
             // 
             this.add_Btn.BackColor = System.Drawing.Color.SandyBrown;
             this.add_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.add_Btn.Location = new System.Drawing.Point(430, 67);
+            this.add_Btn.Location = new System.Drawing.Point(429, 143);
             this.add_Btn.Name = "add_Btn";
             this.add_Btn.Size = new System.Drawing.Size(75, 23);
             this.add_Btn.TabIndex = 1;
@@ -63,7 +63,7 @@
             // 
             this.edit_Btn.BackColor = System.Drawing.Color.SandyBrown;
             this.edit_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.edit_Btn.Location = new System.Drawing.Point(430, 181);
+            this.edit_Btn.Location = new System.Drawing.Point(308, 203);
             this.edit_Btn.Name = "edit_Btn";
             this.edit_Btn.Size = new System.Drawing.Size(75, 23);
             this.edit_Btn.TabIndex = 2;
@@ -71,29 +71,29 @@
             this.edit_Btn.UseVisualStyleBackColor = false;
             this.edit_Btn.Click += new System.EventHandler(this.edit_Btn_Click);
             // 
-            // logout_Btn
-            // 
-            this.logout_Btn.BackColor = System.Drawing.Color.SandyBrown;
-            this.logout_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logout_Btn.Location = new System.Drawing.Point(363, 255);
-            this.logout_Btn.Name = "logout_Btn";
-            this.logout_Btn.Size = new System.Drawing.Size(75, 23);
-            this.logout_Btn.TabIndex = 3;
-            this.logout_Btn.Text = "Logout";
-            this.logout_Btn.UseVisualStyleBackColor = false;
-            this.logout_Btn.Click += new System.EventHandler(this.logout_Btn_Click);
-            // 
             // delete_Btn
             // 
             this.delete_Btn.BackColor = System.Drawing.Color.SandyBrown;
             this.delete_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.delete_Btn.Location = new System.Drawing.Point(291, 181);
+            this.delete_Btn.Location = new System.Drawing.Point(429, 203);
             this.delete_Btn.Name = "delete_Btn";
             this.delete_Btn.Size = new System.Drawing.Size(75, 23);
-            this.delete_Btn.TabIndex = 4;
+            this.delete_Btn.TabIndex = 3;
             this.delete_Btn.Text = "Delete";
             this.delete_Btn.UseVisualStyleBackColor = false;
             this.delete_Btn.Click += new System.EventHandler(this.delete_Btn_Click);
+            // 
+            // logout_Btn
+            // 
+            this.logout_Btn.BackColor = System.Drawing.Color.SandyBrown;
+            this.logout_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logout_Btn.Location = new System.Drawing.Point(368, 266);
+            this.logout_Btn.Name = "logout_Btn";
+            this.logout_Btn.Size = new System.Drawing.Size(75, 23);
+            this.logout_Btn.TabIndex = 4;
+            this.logout_Btn.Text = "Logout";
+            this.logout_Btn.UseVisualStyleBackColor = false;
+            this.logout_Btn.Click += new System.EventHandler(this.logout_Btn_Click);
             // 
             // Form2
             // 
@@ -101,22 +101,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.delete_Btn);
             this.Controls.Add(this.logout_Btn);
+            this.Controls.Add(this.delete_Btn);
             this.Controls.Add(this.edit_Btn);
             this.Controls.Add(this.add_Btn);
             this.Controls.Add(this.display_Btn);
             this.Name = "Form2";
-            this.Text = "Asset management";
+            this.Text = "Form2";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
-           
-            this.Controls.SetChildIndex(this.display_Btn, 0);
-            this.Controls.SetChildIndex(this.add_Btn, 0);
-            this.Controls.SetChildIndex(this.edit_Btn, 0);
-            this.Controls.SetChildIndex(this.logout_Btn, 0);
-            this.Controls.SetChildIndex(this.delete_Btn, 0);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -125,7 +118,7 @@
         private System.Windows.Forms.Button display_Btn;
         private System.Windows.Forms.Button add_Btn;
         private System.Windows.Forms.Button edit_Btn;
-        private System.Windows.Forms.Button logout_Btn;
         private System.Windows.Forms.Button delete_Btn;
+        private System.Windows.Forms.Button logout_Btn;
     }
 }
