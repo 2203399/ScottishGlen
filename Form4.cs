@@ -115,7 +115,7 @@ namespace WindowsFormsApp1
                         command.Parameters.AddWithValue("@Value6", purchase_Date_TxtBox.Text);
                         command.Parameters.AddWithValue("@Value7", additional_Notes_TxtBox.Text);
                         command.Parameters.AddWithValue("@Value8", b);
-                   
+                        MessageBox.Show("Data added to database");
 
                         try
                         {
@@ -164,6 +164,8 @@ namespace WindowsFormsApp1
                         command.Parameters.AddWithValue("@Value4", spurchase_Date_TxtBox.Text);
                         command.Parameters.AddWithValue("@Value5", sadditional_Notes_TxtBox.Text);
                         command.Parameters.AddWithValue("@Value6", bd);
+
+                        MessageBox.Show("Data added to database");
                     }
                 }
             }
