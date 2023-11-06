@@ -109,6 +109,7 @@
             this.Name = "Form2";
             this.Text = "Asset management";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
+           
             this.ResumeLayout(false);
 
         }

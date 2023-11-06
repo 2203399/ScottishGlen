@@ -46,6 +46,15 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void go_Back_Button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form2 form2 = new Form2();
+            form2.ShowDialog();
+            form2.Show();
+            
+        }
+
         private void select_Asset_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(select_Asset_ComboBox.SelectedIndex == 0)
@@ -166,7 +175,5 @@ namespace WindowsFormsApp1
                 }
             }
         }
-
-        
     }
 }

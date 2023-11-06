@@ -68,6 +68,7 @@
             this.select_Asset_Lbl = new System.Windows.Forms.Label();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
+            this.go_Back_Button = new System.Windows.Forms.Button();
             this.hardware_Panel.SuspendLayout();
             this.software_Panel.SuspendLayout();
             this.SuspendLayout();
@@ -441,12 +442,25 @@
             this.monthCalendar2.Visible = false;
             this.monthCalendar2.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar2_DateChanged);
             // 
+            // go_Back_Button
+            // 
+            this.go_Back_Button.BackColor = System.Drawing.Color.SandyBrown;
+            this.go_Back_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.go_Back_Button.Location = new System.Drawing.Point(43, 395);
+            this.go_Back_Button.Name = "go_Back_Button";
+            this.go_Back_Button.Size = new System.Drawing.Size(86, 36);
+            this.go_Back_Button.TabIndex = 32;
+            this.go_Back_Button.Text = "Back";
+            this.go_Back_Button.UseVisualStyleBackColor = false;
+            this.go_Back_Button.Click += new System.EventHandler(this.go_Back_Button_Click);
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1108, 490);
+            this.Controls.Add(this.go_Back_Button);
             this.Controls.Add(this.monthCalendar2);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.select_Asset_Lbl);
@@ -456,7 +470,6 @@
             this.Name = "Form4";
             this.Text = "Hardware asset";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form4_FormClosing);
-           
             this.hardware_Panel.ResumeLayout(false);
             this.hardware_Panel.PerformLayout();
             this.software_Panel.ResumeLayout(false);
@@ -508,5 +521,6 @@
         private System.Windows.Forms.Label spurchase_Date_Lbl;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.MonthCalendar monthCalendar2;
+        private System.Windows.Forms.Button go_Back_Button;
     }
 }
