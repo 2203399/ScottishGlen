@@ -46,6 +46,14 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void back_Button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form2 form2 = new Form2();
+            form2.ShowDialog();
+            form2.Show();
+        }
+
         private void select_Asset_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(select_Asset_ComboBox.SelectedIndex == 0)
@@ -145,8 +153,7 @@ namespace WindowsFormsApp1
 
             if (semployee_Id_ComboBox.SelectedIndex != -1)
             {
-                Random rnd = new Random();
-                int ass_id = rnd.Next(2, 1000);
+                
                 string query = "INSERT INTO SoftwareAssets (name, version, license_info, purchase_date, additional_notes, employee_id) VALUES (@Value1, @Value2, @Value3, @Value4, @Value5, @Value6)";
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
@@ -167,5 +174,7 @@ namespace WindowsFormsApp1
                 }
             }
         }
+
+    
     }
 }
