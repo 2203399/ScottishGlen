@@ -10,17 +10,15 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form2 : Form1
+    public partial class Form2 : Form
     {
         public Form2()
         {
             InitializeComponent();
-
         }
 
         private void display_Btn_Click(object sender, EventArgs e)
         {
-
             this.Hide();
             Form3 form3 = new Form3();
             form3.ShowDialog();
@@ -35,12 +33,12 @@ namespace WindowsFormsApp1
             form4.Show();
         }
 
-        private void delete_Btn_Click(object sender, EventArgs e)
+        private void edit_Btn_Click(object sender, EventArgs e)
         {
             MessageBox.Show("To be implemented in part 3");
         }
 
-        private void edit_Btn_Click(object sender, EventArgs e)
+        private void delete_Btn_Click(object sender, EventArgs e)
         {
             MessageBox.Show("To be implemented in part 3");
         }
@@ -49,6 +47,7 @@ namespace WindowsFormsApp1
         {
             this.Hide();
             Form1 form1 = new Form1();
+            form1.ShowDialog();
             form1.Show();
         }
 
@@ -56,7 +55,5 @@ namespace WindowsFormsApp1
         {
             Application.Exit();
         }
-
-       
     }
 }

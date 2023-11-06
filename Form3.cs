@@ -20,13 +20,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        private void back_Button_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form2 form2 = new Form2();
-            form2.ShowDialog();
-            form2.Show();
-        }
+       
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -114,6 +108,12 @@ namespace WindowsFormsApp1
             Application.Exit();
         }
 
-        
+        private void back_Button_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form2 form2 = new Form2();
+            form2.ShowDialog();
+            form2.Show();
+        }
     }
 }
