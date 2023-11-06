@@ -456,6 +456,7 @@
             this.Name = "Form4";
             this.Text = "Hardware asset";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form4_FormClosing);
+           
             this.hardware_Panel.ResumeLayout(false);
             this.hardware_Panel.PerformLayout();
             this.software_Panel.ResumeLayout(false);
