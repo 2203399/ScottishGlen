@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form2 : Form
+    public partial class Form2 : Form1
     {
         public Form2()
         {
             InitializeComponent();
-            
+
         }
 
         private void display_Btn_Click(object sender, EventArgs e)
         {
-           
+
             this.Hide();
-            Form3 form3= new Form3();
+            Form3 form3 = new Form3();
             form3.ShowDialog();
             form3.Show();
         }
@@ -56,5 +56,7 @@ namespace WindowsFormsApp1
         {
             Application.Exit();
         }
+
+       
     }
 }

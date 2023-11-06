@@ -109,7 +109,14 @@
             this.Name = "Form2";
             this.Text = "Asset management";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
+           
+            this.Controls.SetChildIndex(this.display_Btn, 0);
+            this.Controls.SetChildIndex(this.add_Btn, 0);
+            this.Controls.SetChildIndex(this.edit_Btn, 0);
+            this.Controls.SetChildIndex(this.logout_Btn, 0);
+            this.Controls.SetChildIndex(this.delete_Btn, 0);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
