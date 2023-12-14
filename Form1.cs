@@ -38,12 +38,19 @@ namespace WindowsFormsApp1
             else
             {
                 MessageBox.Show("Inavalid login");
+                username_TxtBox.Text = "";
+                password_TxtBox.Text= "";
             }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void password_TxtBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

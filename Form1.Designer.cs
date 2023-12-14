@@ -81,6 +81,7 @@ namespace WindowsFormsApp1
             this.password_TxtBox.Size = new System.Drawing.Size(100, 20);
             this.password_TxtBox.TabIndex = 4;
             this.password_TxtBox.UseSystemPasswordChar = true;
+            this.password_TxtBox.TextChanged += new System.EventHandler(this.password_TxtBox_TextChanged);
             // 
             // Form1
             // 
