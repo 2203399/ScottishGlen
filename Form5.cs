@@ -134,15 +134,17 @@ namespace WindowsFormsApp1
             string license = GetSingleItemFromDatabase(query, licenseQuery);
             softwareLicenseInfo_TextBox.Text = license.ToString();
 
-            string purchaseQuery = "SELECT license_info FROM SoftwareAssets";
+            string purchaseQuery = "SELECT purchase_date FROM SoftwareAssets";
             string purchaseDate = GetSingleItemFromDatabase(query, purchaseQuery);
             softwarePurchaseDate_TextBox.Text = purchaseDate.ToString();
 
-            string addNotesQuery = "SELECT license_info FROM SoftwareAssets";
+            string addNotesQuery = "SELECT additional_notes FROM SoftwareAssets";
             string addNotes = GetSingleItemFromDatabase(query, addNotesQuery);
             softwareAddNotes_TextBox.Text = addNotes.ToString();
 
         }
+
+
 
 
     }
