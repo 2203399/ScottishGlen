@@ -24,12 +24,35 @@ namespace WindowsFormsApp1
 
         }
 
+        public string GetSingleItemFromDatabase(string query, string connectionString)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            reader.Read();
+                            string item = reader.GetString(0);
+                            return item;
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
+
         private void hsAsset_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (hsAsset_ComboBox.SelectedIndex == 0)
             {
                 hsAsset_ComboBox.Visible = false;
-                asset_ComboBox.Visible = true;
+                softwareAsset_ComboBox.Visible = true;
                 string query = "SELECT name FROM HardwareAssets";
 
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -45,7 +68,7 @@ namespace WindowsFormsApp1
                                 while (reader.Read())
                                 {
                                     string item = reader.GetString(0);
-                                    asset_ComboBox.Items.Add(item);
+                                    hardwareAsset_ComboBox.Items.Add(item);
                                 }
                             }
                         }
@@ -57,7 +80,7 @@ namespace WindowsFormsApp1
             else if (hsAsset_ComboBox.SelectedIndex == 1)
             {
                 hsAsset_ComboBox.Visible = false;
-                asset_ComboBox.Visible = true;
+                softwareAsset_ComboBox.Visible = true;
                 string query = "SELECT name FROM SoftwareAssets";
 
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -73,7 +96,7 @@ namespace WindowsFormsApp1
                                 while (reader.Read())
                                 {
                                     string item = reader.GetString(0);
-                                    asset_ComboBox.Items.Add(item);
+                                    softwareAsset_ComboBox.Items.Add(item);
                                 }
                             }
                         }
@@ -83,5 +106,44 @@ namespace WindowsFormsApp1
 
             }
         }
+
+
+
+        private void softwareCalendar_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            DateTime selectedDate = e.Start;
+            softwarePurchaseDate_TextBox.Text = selectedDate.ToString("yyyy-MM-dd");
+        }
+
+        private void hardwareCalendar_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            DateTime selectedDate = e.Start;
+            hardwarePurchaseDate_TextBox.Text = selectedDate.ToString("yyyy-MM-dd");
+        }
+
+        private void softwareAsset_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedAsset = softwareAsset_ComboBox.SelectedItem.ToString();
+            softwareName_TextBox.Text = selectedAsset;
+            
+            string query = "SELECT version FROM SoftwareAssets";
+            string version = GetSingleItemFromDatabase(query, connectionString);
+            softwareVersion_TextBox.Text = version.ToString();
+
+            string licenseQuery = "SELECT license_info FROM SoftwareAssets";
+            string license = GetSingleItemFromDatabase(query, licenseQuery);
+            softwareLicenseInfo_TextBox.Text = license.ToString();
+
+            string purchaseQuery = "SELECT license_info FROM SoftwareAssets";
+            string purchaseDate = GetSingleItemFromDatabase(query, purchaseQuery);
+            softwarePurchaseDate_TextBox.Text = purchaseDate.ToString();
+
+            string addNotesQuery = "SELECT license_info FROM SoftwareAssets";
+            string addNotes = GetSingleItemFromDatabase(query, addNotesQuery);
+            softwareAddNotes_TextBox.Text = addNotes.ToString();
+
+        }
+
+
     }
 }

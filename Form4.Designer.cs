@@ -200,6 +200,7 @@
             // 
             this.purchase_Date_TxtBox.Location = new System.Drawing.Point(130, 246);
             this.purchase_Date_TxtBox.Name = "purchase_Date_TxtBox";
+            this.purchase_Date_TxtBox.ReadOnly = true;
             this.purchase_Date_TxtBox.Size = new System.Drawing.Size(100, 20);
             this.purchase_Date_TxtBox.TabIndex = 21;
             // 
@@ -237,6 +238,7 @@
             this.hardware_Panel.Controls.Add(this.hasset_Id_Lbl);
             this.hardware_Panel.Controls.Add(this.employee_Id_ComboBox);
             this.hardware_Panel.Controls.Add(this.hname_Lbl);
+            this.hardware_Panel.Controls.Add(this.software_Panel);
             this.hardware_Panel.Controls.Add(this.additional_Notes_TxtBox);
             this.hardware_Panel.Controls.Add(this.hmodel_Lbl);
             this.hardware_Panel.Controls.Add(this.purchase_Date_TxtBox);
@@ -274,7 +276,7 @@
             this.software_Panel.Controls.Add(this.sname_TxtBox);
             this.software_Panel.Controls.Add(this.semployee_Id_Lbl);
             this.software_Panel.Controls.Add(this.textBox8);
-            this.software_Panel.Location = new System.Drawing.Point(310, 9);
+            this.software_Panel.Location = new System.Drawing.Point(0, 0);
             this.software_Panel.Name = "software_Panel";
             this.software_Panel.Size = new System.Drawing.Size(324, 438);
             this.software_Panel.TabIndex = 27;
@@ -352,6 +354,7 @@
             // 
             this.spurchase_Date_TxtBox.Location = new System.Drawing.Point(130, 212);
             this.spurchase_Date_TxtBox.Name = "spurchase_Date_TxtBox";
+            this.spurchase_Date_TxtBox.ReadOnly = true;
             this.spurchase_Date_TxtBox.Size = new System.Drawing.Size(100, 20);
             this.spurchase_Date_TxtBox.TabIndex = 21;
             // 
@@ -465,7 +468,6 @@
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.select_Asset_Lbl);
             this.Controls.Add(this.select_Asset_ComboBox);
-            this.Controls.Add(this.software_Panel);
             this.Controls.Add(this.hardware_Panel);
             this.Name = "Form4";
             this.Text = "Hardware asset";
