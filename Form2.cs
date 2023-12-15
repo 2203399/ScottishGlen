@@ -35,7 +35,10 @@ namespace WindowsFormsApp1
 
         private void edit_Btn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("To be implemented in part 3");
+            this.Hide();
+            Form5 form5 = new Form5();
+            form5.ShowDialog();
+            form5.Show();
         }
 
         private void delete_Btn_Click(object sender, EventArgs e)
