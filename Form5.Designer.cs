@@ -344,7 +344,7 @@
             // hardwareAsset_ComboBox
             // 
             this.hardwareAsset_ComboBox.FormattingEnabled = true;
-            this.hardwareAsset_ComboBox.Location = new System.Drawing.Point(12, 126);
+            this.hardwareAsset_ComboBox.Location = new System.Drawing.Point(15, 99);
             this.hardwareAsset_ComboBox.Name = "hardwareAsset_ComboBox";
             this.hardwareAsset_ComboBox.Size = new System.Drawing.Size(121, 21);
             this.hardwareAsset_ComboBox.TabIndex = 5;

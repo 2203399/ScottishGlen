@@ -52,7 +52,7 @@ namespace WindowsFormsApp1
             if (hsAsset_ComboBox.SelectedIndex == 0)
             {
                 hsAsset_ComboBox.Visible = false;
-                softwareAsset_ComboBox.Visible = true;
+                hardwareAsset_ComboBox.Visible = true;
                 string query = "SELECT name FROM HardwareAssets";
 
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
