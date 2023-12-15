@@ -131,21 +131,47 @@ namespace WindowsFormsApp1
             softwareVersion_TextBox.Text = version.ToString();
 
             string licenseQuery = "SELECT license_info FROM SoftwareAssets";
-            string license = GetSingleItemFromDatabase(query, licenseQuery);
+            string license = GetSingleItemFromDatabase(licenseQuery, connectionString);
             softwareLicenseInfo_TextBox.Text = license.ToString();
 
             string purchaseQuery = "SELECT purchase_date FROM SoftwareAssets";
-            string purchaseDate = GetSingleItemFromDatabase(query, purchaseQuery);
+            string purchaseDate = GetSingleItemFromDatabase(purchaseQuery, connectionString);
             softwarePurchaseDate_TextBox.Text = purchaseDate.ToString();
 
             string addNotesQuery = "SELECT additional_notes FROM SoftwareAssets";
-            string addNotes = GetSingleItemFromDatabase(query, addNotesQuery);
+            string addNotes = GetSingleItemFromDatabase(addNotesQuery, connectionString);
             softwareAddNotes_TextBox.Text = addNotes.ToString();
 
         }
 
+        private void hardwareAsset_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedAsset = hardwareAsset_ComboBox.SelectedItem.ToString();
+            hardwareName_TextBox.Text = selectedAsset;
 
+            string modelQuery = "SELECT model FROM HardwareAssets";
+            string model = GetSingleItemFromDatabase(modelQuery, connectionString);
+            hardwareModel_TextBox.Text = model.ToString();
 
+            string manufacturerQuery = "SELECT manufacturer FROM HardwareAssets";
+            string manufacturer = GetSingleItemFromDatabase(manufacturerQuery, connectionString);
+            hardwareManufacturer_TextBox.Text = manufacturer.ToString();
 
+            string typeQuery = "SELECT type FROM HardwareAssets";
+            string type = GetSingleItemFromDatabase(typeQuery, connectionString);
+            hardwareType_TextBox.Text = type.ToString();
+
+            string ipQuery = "SELECT ip_address FROM HardwareAssets";
+            string ip = GetSingleItemFromDatabase(ipQuery, connectionString);
+            hardwareIpAddress_TextBox.Text = ip.ToString();
+
+            string purchaseQuery = "SELECT purchase_date FROM HardwareAssets";
+            string purchase = GetSingleItemFromDatabase(purchaseQuery, connectionString);
+            hardwarePurchaseDate_TextBox.Text = purchase.ToString();
+
+            string addQuery = "SELECT additional_notes FROM HardwareAssets";
+            string addNotes = GetSingleItemFromDatabase(addQuery, connectionString);
+            hardwareAddNotes_TextBox.Text = addNotes.ToString();
+        }
     }
 }

@@ -79,6 +79,7 @@
             // 
             this.editSoftwarePanel.Controls.Add(this.softwareAddNotes_TextBox);
             this.editSoftwarePanel.Controls.Add(this.softwarePurchaseDate_TextBox);
+            this.editSoftwarePanel.Controls.Add(this.editHardwarePanel);
             this.editSoftwarePanel.Controls.Add(this.softwareLicenseInfo_TextBox);
             this.editSoftwarePanel.Controls.Add(this.softwareVersion_TextBox);
             this.editSoftwarePanel.Controls.Add(this.softwareName_TextBox);
@@ -125,7 +126,7 @@
             this.editHardwarePanel.Controls.Add(this.hardwareManufacturer_Label);
             this.editHardwarePanel.Controls.Add(this.hardwareModel_Label);
             this.editHardwarePanel.Controls.Add(this.hardwareName_Label);
-            this.editHardwarePanel.Location = new System.Drawing.Point(520, 77);
+            this.editHardwarePanel.Location = new System.Drawing.Point(6, 0);
             this.editHardwarePanel.Name = "editHardwarePanel";
             this.editHardwarePanel.Size = new System.Drawing.Size(242, 321);
             this.editHardwarePanel.TabIndex = 6;
@@ -349,6 +350,7 @@
             this.hardwareAsset_ComboBox.Size = new System.Drawing.Size(121, 21);
             this.hardwareAsset_ComboBox.TabIndex = 5;
             this.hardwareAsset_ComboBox.Visible = false;
+            this.hardwareAsset_ComboBox.SelectedIndexChanged += new System.EventHandler(this.hardwareAsset_ComboBox_SelectedIndexChanged);
             // 
             // softwareCalendar
             // 
@@ -373,7 +375,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.hardwareCalendar);
             this.Controls.Add(this.softwareCalendar);
-            this.Controls.Add(this.editHardwarePanel);
             this.Controls.Add(this.hardwareAsset_ComboBox);
             this.Controls.Add(this.softwareAsset_ComboBox);
             this.Controls.Add(this.assetEdit_Lbl);
