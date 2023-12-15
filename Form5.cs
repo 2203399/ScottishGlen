@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace WindowsFormsApp1
     public partial class Form5 : Form
     {
         public string connectionString = "server=lochnagar.abertay.ac.uk;uid=sql2203399;pwd=oJ8HnTiBzB68;database=sql2203399;";
+        private bool fieldChange = false;
         public Form5()
         {
             InitializeComponent();
@@ -21,10 +23,16 @@ namespace WindowsFormsApp1
 
         private void Form5_Load(object sender, EventArgs e)
         {
+            softwareAddNotes_TextBox.TextChanged += textChanged;
 
         }
 
-        public string GetSingleItemFromDatabase(string query, string connectionString)
+        private void textChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public string getSingleItemFromDatabase(string query, string connectionString)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -129,19 +137,19 @@ namespace WindowsFormsApp1
             softwareName_TextBox.Text = selectedAsset;
             
             string query = "SELECT version FROM SoftwareAssets";
-            string version = GetSingleItemFromDatabase(query, connectionString);
+            string version = getSingleItemFromDatabase(query, connectionString);
             softwareVersion_TextBox.Text = version.ToString();
 
             string licenseQuery = "SELECT license_info FROM SoftwareAssets";
-            string license = GetSingleItemFromDatabase(licenseQuery, connectionString);
+            string license = getSingleItemFromDatabase(licenseQuery, connectionString);
             softwareLicenseInfo_TextBox.Text = license.ToString();
 
             string purchaseQuery = "SELECT purchase_date FROM SoftwareAssets";
-            string purchaseDate = GetSingleItemFromDatabase(purchaseQuery, connectionString);
+            string purchaseDate = getSingleItemFromDatabase(purchaseQuery, connectionString);
             softwarePurchaseDate_TextBox.Text = purchaseDate.ToString();
 
             string addNotesQuery = "SELECT additional_notes FROM SoftwareAssets";
-            string addNotes = GetSingleItemFromDatabase(addNotesQuery, connectionString);
+            string addNotes = getSingleItemFromDatabase(addNotesQuery, connectionString);
             softwareAddNotes_TextBox.Text = addNotes.ToString();
 
         }
@@ -152,30 +160,28 @@ namespace WindowsFormsApp1
             hardwareName_TextBox.Text = selectedAsset;
 
             string modelQuery = "SELECT model FROM HardwareAssets";
-            string model = GetSingleItemFromDatabase(modelQuery, connectionString);
+            string model = getSingleItemFromDatabase(modelQuery, connectionString);
             hardwareModel_TextBox.Text = model.ToString();
 
             string manufacturerQuery = "SELECT manufacturer FROM HardwareAssets";
-            string manufacturer = GetSingleItemFromDatabase(manufacturerQuery, connectionString);
+            string manufacturer = getSingleItemFromDatabase(manufacturerQuery, connectionString);
             hardwareManufacturer_TextBox.Text = manufacturer.ToString();
 
             string typeQuery = "SELECT type FROM HardwareAssets";
-            string type = GetSingleItemFromDatabase(typeQuery, connectionString);
+            string type = getSingleItemFromDatabase(typeQuery, connectionString);
             hardwareType_TextBox.Text = type.ToString();
 
             string ipQuery = "SELECT ip_address FROM HardwareAssets";
-            string ip = GetSingleItemFromDatabase(ipQuery, connectionString);
+            string ip = getSingleItemFromDatabase(ipQuery, connectionString);
             hardwareIpAddress_TextBox.Text = ip.ToString();
 
             string purchaseQuery = "SELECT purchase_date FROM HardwareAssets";
-            string purchase = GetSingleItemFromDatabase(purchaseQuery, connectionString);
+            string purchase = getSingleItemFromDatabase(purchaseQuery, connectionString);
             hardwarePurchaseDate_TextBox.Text = purchase.ToString();
 
             string addQuery = "SELECT additional_notes FROM HardwareAssets";
-            string addNotes = GetSingleItemFromDatabase(addQuery, connectionString);
+            string addNotes = getSingleItemFromDatabase(addQuery, connectionString);
             hardwareAddNotes_TextBox.Text = addNotes.ToString();
         }
-
-
     }
 }
