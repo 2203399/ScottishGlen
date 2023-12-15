@@ -88,22 +88,22 @@
             this.editSoftwarePanel.Controls.Add(this.softwareLicenseInfo_Label);
             this.editSoftwarePanel.Controls.Add(this.softwareVersion_Label);
             this.editSoftwarePanel.Controls.Add(this.softwareName_Label);
-            this.editSoftwarePanel.Location = new System.Drawing.Point(254, 66);
+            this.editSoftwarePanel.Location = new System.Drawing.Point(254, 46);
             this.editSoftwarePanel.Name = "editSoftwarePanel";
-            this.editSoftwarePanel.Size = new System.Drawing.Size(248, 321);
+            this.editSoftwarePanel.Size = new System.Drawing.Size(248, 341);
             this.editSoftwarePanel.TabIndex = 1;
             this.editSoftwarePanel.Visible = false;
             // 
             // softwareAddNotes_TextBox
             // 
-            this.softwareAddNotes_TextBox.Location = new System.Drawing.Point(116, 269);
+            this.softwareAddNotes_TextBox.Location = new System.Drawing.Point(118, 259);
             this.softwareAddNotes_TextBox.Name = "softwareAddNotes_TextBox";
             this.softwareAddNotes_TextBox.Size = new System.Drawing.Size(100, 20);
             this.softwareAddNotes_TextBox.TabIndex = 11;
             // 
             // softwarePurchaseDate_TextBox
             // 
-            this.softwarePurchaseDate_TextBox.Location = new System.Drawing.Point(116, 208);
+            this.softwarePurchaseDate_TextBox.Location = new System.Drawing.Point(118, 198);
             this.softwarePurchaseDate_TextBox.Name = "softwarePurchaseDate_TextBox";
             this.softwarePurchaseDate_TextBox.ReadOnly = true;
             this.softwarePurchaseDate_TextBox.Size = new System.Drawing.Size(100, 20);
@@ -126,9 +126,9 @@
             this.editHardwarePanel.Controls.Add(this.hardwareManufacturer_Label);
             this.editHardwarePanel.Controls.Add(this.hardwareModel_Label);
             this.editHardwarePanel.Controls.Add(this.hardwareName_Label);
-            this.editHardwarePanel.Location = new System.Drawing.Point(6, 0);
+            this.editHardwarePanel.Location = new System.Drawing.Point(0, 0);
             this.editHardwarePanel.Name = "editHardwarePanel";
-            this.editHardwarePanel.Size = new System.Drawing.Size(242, 321);
+            this.editHardwarePanel.Size = new System.Drawing.Size(242, 341);
             this.editHardwarePanel.TabIndex = 6;
             this.editHardwarePanel.Visible = false;
             // 
@@ -247,21 +247,21 @@
             // 
             // softwareLicenseInfo_TextBox
             // 
-            this.softwareLicenseInfo_TextBox.Location = new System.Drawing.Point(116, 147);
+            this.softwareLicenseInfo_TextBox.Location = new System.Drawing.Point(118, 137);
             this.softwareLicenseInfo_TextBox.Name = "softwareLicenseInfo_TextBox";
             this.softwareLicenseInfo_TextBox.Size = new System.Drawing.Size(100, 20);
             this.softwareLicenseInfo_TextBox.TabIndex = 9;
             // 
             // softwareVersion_TextBox
             // 
-            this.softwareVersion_TextBox.Location = new System.Drawing.Point(116, 90);
+            this.softwareVersion_TextBox.Location = new System.Drawing.Point(118, 80);
             this.softwareVersion_TextBox.Name = "softwareVersion_TextBox";
             this.softwareVersion_TextBox.Size = new System.Drawing.Size(100, 20);
             this.softwareVersion_TextBox.TabIndex = 8;
             // 
             // softwareName_TextBox
             // 
-            this.softwareName_TextBox.Location = new System.Drawing.Point(116, 30);
+            this.softwareName_TextBox.Location = new System.Drawing.Point(118, 20);
             this.softwareName_TextBox.Name = "softwareName_TextBox";
             this.softwareName_TextBox.Size = new System.Drawing.Size(100, 20);
             this.softwareName_TextBox.TabIndex = 7;
@@ -269,7 +269,7 @@
             // softwareAddNotes_Label
             // 
             this.softwareAddNotes_Label.AutoSize = true;
-            this.softwareAddNotes_Label.Location = new System.Drawing.Point(26, 269);
+            this.softwareAddNotes_Label.Location = new System.Drawing.Point(28, 259);
             this.softwareAddNotes_Label.Name = "softwareAddNotes_Label";
             this.softwareAddNotes_Label.Size = new System.Drawing.Size(84, 13);
             this.softwareAddNotes_Label.TabIndex = 6;
@@ -278,7 +278,7 @@
             // softwarePurchaseDate_Label
             // 
             this.softwarePurchaseDate_Label.AutoSize = true;
-            this.softwarePurchaseDate_Label.Location = new System.Drawing.Point(26, 210);
+            this.softwarePurchaseDate_Label.Location = new System.Drawing.Point(28, 200);
             this.softwarePurchaseDate_Label.Name = "softwarePurchaseDate_Label";
             this.softwarePurchaseDate_Label.Size = new System.Drawing.Size(76, 13);
             this.softwarePurchaseDate_Label.TabIndex = 5;
@@ -287,7 +287,7 @@
             // softwareLicenseInfo_Label
             // 
             this.softwareLicenseInfo_Label.AutoSize = true;
-            this.softwareLicenseInfo_Label.Location = new System.Drawing.Point(26, 147);
+            this.softwareLicenseInfo_Label.Location = new System.Drawing.Point(28, 137);
             this.softwareLicenseInfo_Label.Name = "softwareLicenseInfo_Label";
             this.softwareLicenseInfo_Label.Size = new System.Drawing.Size(69, 13);
             this.softwareLicenseInfo_Label.TabIndex = 4;
@@ -296,7 +296,7 @@
             // softwareVersion_Label
             // 
             this.softwareVersion_Label.AutoSize = true;
-            this.softwareVersion_Label.Location = new System.Drawing.Point(26, 90);
+            this.softwareVersion_Label.Location = new System.Drawing.Point(28, 80);
             this.softwareVersion_Label.Name = "softwareVersion_Label";
             this.softwareVersion_Label.Size = new System.Drawing.Size(42, 13);
             this.softwareVersion_Label.TabIndex = 2;
@@ -305,7 +305,7 @@
             // softwareName_Label
             // 
             this.softwareName_Label.AutoSize = true;
-            this.softwareName_Label.Location = new System.Drawing.Point(26, 33);
+            this.softwareName_Label.Location = new System.Drawing.Point(28, 23);
             this.softwareName_Label.Name = "softwareName_Label";
             this.softwareName_Label.Size = new System.Drawing.Size(35, 13);
             this.softwareName_Label.TabIndex = 0;
@@ -336,7 +336,7 @@
             // assetEdit_Lbl
             // 
             this.assetEdit_Lbl.AutoSize = true;
-            this.assetEdit_Lbl.Location = new System.Drawing.Point(12, 66);
+            this.assetEdit_Lbl.Location = new System.Drawing.Point(12, 46);
             this.assetEdit_Lbl.Name = "assetEdit_Lbl";
             this.assetEdit_Lbl.Size = new System.Drawing.Size(174, 13);
             this.assetEdit_Lbl.TabIndex = 4;

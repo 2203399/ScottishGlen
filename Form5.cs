@@ -52,6 +52,7 @@ namespace WindowsFormsApp1
             if (hsAsset_ComboBox.SelectedIndex == 0)
             {
                 hsAsset_ComboBox.Visible = false;
+                hardwareCalendar.Visible = true;
                 hardwareAsset_ComboBox.Visible = true;
                 string query = "SELECT name FROM HardwareAssets";
 
@@ -80,6 +81,7 @@ namespace WindowsFormsApp1
             else if (hsAsset_ComboBox.SelectedIndex == 1)
             {
                 hsAsset_ComboBox.Visible = false;
+                softwareCalendar.Visible = true;
                 softwareAsset_ComboBox.Visible = true;
                 string query = "SELECT name FROM SoftwareAssets";
 
@@ -173,5 +175,7 @@ namespace WindowsFormsApp1
             string addNotes = GetSingleItemFromDatabase(addQuery, connectionString);
             hardwareAddNotes_TextBox.Text = addNotes.ToString();
         }
+
+
     }
 }
