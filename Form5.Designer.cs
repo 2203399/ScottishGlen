@@ -312,6 +312,7 @@
             // 
             // edit_Button
             // 
+            this.edit_Button.Enabled = false;
             this.edit_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.edit_Button.Location = new System.Drawing.Point(15, 364);
             this.edit_Button.Name = "edit_Button";
