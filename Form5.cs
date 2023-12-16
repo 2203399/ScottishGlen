@@ -214,7 +214,24 @@ namespace WindowsFormsApp1
             {
                 if (editSoftwarePanel.Visible == true)
                 {
+                    string name = softwareName_TextBox.Text;
+                    string version = softwareVersion_TextBox.Text;
+                    string license = softwareLicenseInfo_TextBox.Text;
+                    string purchaseDate = softwarePurchaseDate_TextBox.Text;
+                    string notes = softwareAddNotes_TextBox.Text;
 
+                    string query = "UPDATE SoftwareAssets SET name = @name, version = @version, license_info = @license, purhcase_date = @purchaseDate, additional_notes = @notes WHERE name = '" + selectedSAsset + "'";
+                    using (MySqlConnection connection = new MySqlConnection(connectionString))
+                    {
+                        using (MySqlCommand command = new MySqlCommand(query, connection))
+                        {
+                            command.Parameters.AddWithValue("@name", name);
+                            command.Parameters.AddWithValue("@version", version);
+                            command.Parameters.AddWithValue("@license", license);
+                            command.Parameters.AddWithValue("@purchaseDate", purchaseDate);
+                            command.Parameters.AddWithValue("@notes", notes);
+                        }
+                    }
                 }
 
                 else if (editHardwarePanel.Visible == true) {
@@ -226,12 +243,18 @@ namespace WindowsFormsApp1
                     string purchaseDate = hardwarePurchaseDate_TextBox.Text;
                     string notes = hardwareAddNotes_TextBox.Text;
 
-                    string query = "UPDATE HardwareAssets SET mame = @name, model = @model, manufacturer = @manufacturer, type = @type, ip = @ip, purchase_date = @purchaseDate, additional_notes = @notes WHERE name = @selectedHAsset";
+                    string query = "UPDATE HardwareAssets SET mame = @name, model = @model, manufacturer = @manufacturer, type = @type, ip_address = @ip, purchase_date = @purchaseDate, additional_notes = @notes WHERE name = '" + selectedHAsset + "'";
                     using (MySqlConnection connection = new MySqlConnection(connectionString))
                     {
                         using (MySqlCommand command = new MySqlCommand(query, connection))
                         {
-
+                            command.Parameters.AddWithValue("@name", name);
+                            command.Parameters.AddWithValue("@model", model);
+                            command.Parameters.AddWithValue("@manufacturer", manufacturer);
+                            command.Parameters.AddWithValue("@type", type);
+                            command.Parameters.AddWithValue("@ip", ip);
+                            command.Parameters.AddWithValue("@purchaseDate", purchaseDate);
+                            command.Parameters.AddWithValue("@notes", notes);
                         }
                     }
                 }
