@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
 
 namespace WindowsFormsApp1
 {
@@ -27,6 +28,21 @@ namespace WindowsFormsApp1
         private void login_Btn_Click(object sender, EventArgs e)
         {
             if(string.Equals(username_TxtBox.Text, "username") && string.Equals(password_TxtBox.Text, "password")) {
+
+                IPHostEntry host;
+                string localIP = "";
+                host = Dns.GetHostEntry(Dns.GetHostName());
+
+                foreach (IPAddress ip in host.AddressList)
+                {
+                    if(ip.AddressFamily.ToString() == "InterNetwork")
+                    {
+                        localIP = ip.ToString();
+                    }
+                }
+
+
+                
 
                 this.Hide();
                 Form2 form2 = new Form2();
