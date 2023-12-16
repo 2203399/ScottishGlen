@@ -204,6 +204,14 @@ namespace WindowsFormsApp1
             hardwareAddNotes_TextBox.TextChanged += textChanged;
         }
 
+        private void back_Button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form2 form2 = new Form2();
+            form2.ShowDialog();
+            form2.Show();
+        }
+
         private void edit_Button_Click(object sender, EventArgs e)
         {
             if (edit_Button.Enabled == false)
@@ -220,9 +228,8 @@ namespace WindowsFormsApp1
                     string license = softwareLicenseInfo_TextBox.Text;
                     string purchaseDate = softwarePurchaseDate_TextBox.Text;
                     string notes = softwareAddNotes_TextBox.Text;
-                    string c = ".NET";
 
-                    string query = "UPDATE SoftwareAssets SET name = @name, version = @version, license_info = @license, purchase_date = @purchaseDate, additional_notes = @notes WHERE name = @c";
+                    string query = "UPDATE SoftwareAssets SET name = @name, version = @version, license_info = @license, purchase_date = @purchaseDate, additional_notes = @notes WHERE name = @selectedSAsset";
                     using (MySqlConnection connection = new MySqlConnection(connectionString))
                     {
                         using (MySqlCommand command = new MySqlCommand(query, connection))
@@ -232,9 +239,7 @@ namespace WindowsFormsApp1
                             command.Parameters.AddWithValue("@license", license);
                             command.Parameters.AddWithValue("@purchaseDate", purchaseDate);
                             command.Parameters.AddWithValue("@notes", notes);
-                            command.Parameters.AddWithValue("@c", c);
-                            MessageBox.Show("Data added to database");
-
+                            command.Parameters.AddWithValue("@selectedSAsset", selectedSAsset);
                             try
                             {
                                 connection.Open();
@@ -258,7 +263,7 @@ namespace WindowsFormsApp1
                     string purchaseDate = hardwarePurchaseDate_TextBox.Text;
                     string notes = hardwareAddNotes_TextBox.Text;
 
-                    string query = "UPDATE HardwareAssets SET mame = @name, model = @model, manufacturer = @manufacturer, type = @type, ip_address = @ip, purchase_date = @purchaseDate, additional_notes = @notes WHERE name = '" + selectedHAsset + "'";
+                    string query = "UPDATE HardwareAssets SET mame = @name, model = @model, manufacturer = @manufacturer, type = @type, ip_address = @ip, purchase_date = @purchaseDate, additional_notes = @notes WHERE name = @selectedHAsset";
                     using (MySqlConnection connection = new MySqlConnection(connectionString))
                     {
                         using (MySqlCommand command = new MySqlCommand(query, connection))
@@ -270,6 +275,7 @@ namespace WindowsFormsApp1
                             command.Parameters.AddWithValue("@ip", ip);
                             command.Parameters.AddWithValue("@purchaseDate", purchaseDate);
                             command.Parameters.AddWithValue("@notes", notes);
+                            command.Parameters.AddWithValue("selectHAsset", selectedHAsset);
                         }
                     }
                 }

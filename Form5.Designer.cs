@@ -32,6 +32,14 @@
             this.editSoftwarePanel = new System.Windows.Forms.Panel();
             this.softwareAddNotes_TextBox = new System.Windows.Forms.TextBox();
             this.softwarePurchaseDate_TextBox = new System.Windows.Forms.TextBox();
+            this.softwareLicenseInfo_TextBox = new System.Windows.Forms.TextBox();
+            this.softwareVersion_TextBox = new System.Windows.Forms.TextBox();
+            this.softwareName_TextBox = new System.Windows.Forms.TextBox();
+            this.softwareAddNotes_Label = new System.Windows.Forms.Label();
+            this.softwarePurchaseDate_Label = new System.Windows.Forms.Label();
+            this.softwareLicenseInfo_Label = new System.Windows.Forms.Label();
+            this.softwareVersion_Label = new System.Windows.Forms.Label();
+            this.softwareName_Label = new System.Windows.Forms.Label();
             this.editHardwarePanel = new System.Windows.Forms.Panel();
             this.hardwareAddNotes_TextBox = new System.Windows.Forms.TextBox();
             this.hardwarePurchaseDate_TextBox = new System.Windows.Forms.TextBox();
@@ -47,20 +55,13 @@
             this.hardwareManufacturer_Label = new System.Windows.Forms.Label();
             this.hardwareModel_Label = new System.Windows.Forms.Label();
             this.hardwareName_Label = new System.Windows.Forms.Label();
-            this.softwareLicenseInfo_TextBox = new System.Windows.Forms.TextBox();
-            this.softwareVersion_TextBox = new System.Windows.Forms.TextBox();
-            this.softwareName_TextBox = new System.Windows.Forms.TextBox();
-            this.softwareAddNotes_Label = new System.Windows.Forms.Label();
-            this.softwarePurchaseDate_Label = new System.Windows.Forms.Label();
-            this.softwareLicenseInfo_Label = new System.Windows.Forms.Label();
-            this.softwareVersion_Label = new System.Windows.Forms.Label();
-            this.softwareName_Label = new System.Windows.Forms.Label();
             this.edit_Button = new System.Windows.Forms.Button();
             this.hsAsset_ComboBox = new System.Windows.Forms.ComboBox();
             this.assetEdit_Lbl = new System.Windows.Forms.Label();
             this.hardwareAsset_ComboBox = new System.Windows.Forms.ComboBox();
             this.softwareCalendar = new System.Windows.Forms.MonthCalendar();
             this.hardwareCalendar = new System.Windows.Forms.MonthCalendar();
+            this.back_Button = new System.Windows.Forms.Button();
             this.editSoftwarePanel.SuspendLayout();
             this.editHardwarePanel.SuspendLayout();
             this.SuspendLayout();
@@ -68,7 +69,7 @@
             // softwareAsset_ComboBox
             // 
             this.softwareAsset_ComboBox.FormattingEnabled = true;
-            this.softwareAsset_ComboBox.Location = new System.Drawing.Point(15, 99);
+            this.softwareAsset_ComboBox.Location = new System.Drawing.Point(15, 144);
             this.softwareAsset_ComboBox.Name = "softwareAsset_ComboBox";
             this.softwareAsset_ComboBox.Size = new System.Drawing.Size(121, 21);
             this.softwareAsset_ComboBox.TabIndex = 0;
@@ -108,6 +109,72 @@
             this.softwarePurchaseDate_TextBox.Size = new System.Drawing.Size(100, 20);
             this.softwarePurchaseDate_TextBox.TabIndex = 10;
             this.softwarePurchaseDate_TextBox.Tag = "";
+            // 
+            // softwareLicenseInfo_TextBox
+            // 
+            this.softwareLicenseInfo_TextBox.Location = new System.Drawing.Point(118, 137);
+            this.softwareLicenseInfo_TextBox.Name = "softwareLicenseInfo_TextBox";
+            this.softwareLicenseInfo_TextBox.Size = new System.Drawing.Size(100, 20);
+            this.softwareLicenseInfo_TextBox.TabIndex = 9;
+            // 
+            // softwareVersion_TextBox
+            // 
+            this.softwareVersion_TextBox.Location = new System.Drawing.Point(118, 80);
+            this.softwareVersion_TextBox.Name = "softwareVersion_TextBox";
+            this.softwareVersion_TextBox.Size = new System.Drawing.Size(100, 20);
+            this.softwareVersion_TextBox.TabIndex = 8;
+            // 
+            // softwareName_TextBox
+            // 
+            this.softwareName_TextBox.Location = new System.Drawing.Point(118, 20);
+            this.softwareName_TextBox.Name = "softwareName_TextBox";
+            this.softwareName_TextBox.Size = new System.Drawing.Size(100, 20);
+            this.softwareName_TextBox.TabIndex = 7;
+            // 
+            // softwareAddNotes_Label
+            // 
+            this.softwareAddNotes_Label.AutoSize = true;
+            this.softwareAddNotes_Label.Location = new System.Drawing.Point(28, 259);
+            this.softwareAddNotes_Label.Name = "softwareAddNotes_Label";
+            this.softwareAddNotes_Label.Size = new System.Drawing.Size(84, 13);
+            this.softwareAddNotes_Label.TabIndex = 6;
+            this.softwareAddNotes_Label.Text = "Additional Notes";
+            // 
+            // softwarePurchaseDate_Label
+            // 
+            this.softwarePurchaseDate_Label.AutoSize = true;
+            this.softwarePurchaseDate_Label.Location = new System.Drawing.Point(28, 200);
+            this.softwarePurchaseDate_Label.Name = "softwarePurchaseDate_Label";
+            this.softwarePurchaseDate_Label.Size = new System.Drawing.Size(76, 13);
+            this.softwarePurchaseDate_Label.TabIndex = 5;
+            this.softwarePurchaseDate_Label.Text = "Purchase date";
+            // 
+            // softwareLicenseInfo_Label
+            // 
+            this.softwareLicenseInfo_Label.AutoSize = true;
+            this.softwareLicenseInfo_Label.Location = new System.Drawing.Point(28, 137);
+            this.softwareLicenseInfo_Label.Name = "softwareLicenseInfo_Label";
+            this.softwareLicenseInfo_Label.Size = new System.Drawing.Size(69, 13);
+            this.softwareLicenseInfo_Label.TabIndex = 4;
+            this.softwareLicenseInfo_Label.Text = "Licesnse info";
+            // 
+            // softwareVersion_Label
+            // 
+            this.softwareVersion_Label.AutoSize = true;
+            this.softwareVersion_Label.Location = new System.Drawing.Point(28, 80);
+            this.softwareVersion_Label.Name = "softwareVersion_Label";
+            this.softwareVersion_Label.Size = new System.Drawing.Size(42, 13);
+            this.softwareVersion_Label.TabIndex = 2;
+            this.softwareVersion_Label.Text = "Version";
+            // 
+            // softwareName_Label
+            // 
+            this.softwareName_Label.AutoSize = true;
+            this.softwareName_Label.Location = new System.Drawing.Point(28, 23);
+            this.softwareName_Label.Name = "softwareName_Label";
+            this.softwareName_Label.Size = new System.Drawing.Size(35, 13);
+            this.softwareName_Label.TabIndex = 0;
+            this.softwareName_Label.Text = "Name";
             // 
             // editHardwarePanel
             // 
@@ -244,72 +311,6 @@
             this.hardwareName_Label.TabIndex = 0;
             this.hardwareName_Label.Text = "Name";
             // 
-            // softwareLicenseInfo_TextBox
-            // 
-            this.softwareLicenseInfo_TextBox.Location = new System.Drawing.Point(118, 137);
-            this.softwareLicenseInfo_TextBox.Name = "softwareLicenseInfo_TextBox";
-            this.softwareLicenseInfo_TextBox.Size = new System.Drawing.Size(100, 20);
-            this.softwareLicenseInfo_TextBox.TabIndex = 9;
-            // 
-            // softwareVersion_TextBox
-            // 
-            this.softwareVersion_TextBox.Location = new System.Drawing.Point(118, 80);
-            this.softwareVersion_TextBox.Name = "softwareVersion_TextBox";
-            this.softwareVersion_TextBox.Size = new System.Drawing.Size(100, 20);
-            this.softwareVersion_TextBox.TabIndex = 8;
-            // 
-            // softwareName_TextBox
-            // 
-            this.softwareName_TextBox.Location = new System.Drawing.Point(118, 20);
-            this.softwareName_TextBox.Name = "softwareName_TextBox";
-            this.softwareName_TextBox.Size = new System.Drawing.Size(100, 20);
-            this.softwareName_TextBox.TabIndex = 7;
-            // 
-            // softwareAddNotes_Label
-            // 
-            this.softwareAddNotes_Label.AutoSize = true;
-            this.softwareAddNotes_Label.Location = new System.Drawing.Point(28, 259);
-            this.softwareAddNotes_Label.Name = "softwareAddNotes_Label";
-            this.softwareAddNotes_Label.Size = new System.Drawing.Size(84, 13);
-            this.softwareAddNotes_Label.TabIndex = 6;
-            this.softwareAddNotes_Label.Text = "Additional Notes";
-            // 
-            // softwarePurchaseDate_Label
-            // 
-            this.softwarePurchaseDate_Label.AutoSize = true;
-            this.softwarePurchaseDate_Label.Location = new System.Drawing.Point(28, 200);
-            this.softwarePurchaseDate_Label.Name = "softwarePurchaseDate_Label";
-            this.softwarePurchaseDate_Label.Size = new System.Drawing.Size(76, 13);
-            this.softwarePurchaseDate_Label.TabIndex = 5;
-            this.softwarePurchaseDate_Label.Text = "Purchase date";
-            // 
-            // softwareLicenseInfo_Label
-            // 
-            this.softwareLicenseInfo_Label.AutoSize = true;
-            this.softwareLicenseInfo_Label.Location = new System.Drawing.Point(28, 137);
-            this.softwareLicenseInfo_Label.Name = "softwareLicenseInfo_Label";
-            this.softwareLicenseInfo_Label.Size = new System.Drawing.Size(69, 13);
-            this.softwareLicenseInfo_Label.TabIndex = 4;
-            this.softwareLicenseInfo_Label.Text = "Licesnse info";
-            // 
-            // softwareVersion_Label
-            // 
-            this.softwareVersion_Label.AutoSize = true;
-            this.softwareVersion_Label.Location = new System.Drawing.Point(28, 80);
-            this.softwareVersion_Label.Name = "softwareVersion_Label";
-            this.softwareVersion_Label.Size = new System.Drawing.Size(42, 13);
-            this.softwareVersion_Label.TabIndex = 2;
-            this.softwareVersion_Label.Text = "Version";
-            // 
-            // softwareName_Label
-            // 
-            this.softwareName_Label.AutoSize = true;
-            this.softwareName_Label.Location = new System.Drawing.Point(28, 23);
-            this.softwareName_Label.Name = "softwareName_Label";
-            this.softwareName_Label.Size = new System.Drawing.Size(35, 13);
-            this.softwareName_Label.TabIndex = 0;
-            this.softwareName_Label.Text = "Name";
-            // 
             // edit_Button
             // 
             this.edit_Button.BackColor = System.Drawing.Color.SandyBrown;
@@ -329,7 +330,7 @@
             this.hsAsset_ComboBox.Items.AddRange(new object[] {
             "Hardware",
             "Software"});
-            this.hsAsset_ComboBox.Location = new System.Drawing.Point(15, 99);
+            this.hsAsset_ComboBox.Location = new System.Drawing.Point(15, 144);
             this.hsAsset_ComboBox.Name = "hsAsset_ComboBox";
             this.hsAsset_ComboBox.Size = new System.Drawing.Size(121, 21);
             this.hsAsset_ComboBox.TabIndex = 3;
@@ -338,7 +339,7 @@
             // assetEdit_Lbl
             // 
             this.assetEdit_Lbl.AutoSize = true;
-            this.assetEdit_Lbl.Location = new System.Drawing.Point(12, 46);
+            this.assetEdit_Lbl.Location = new System.Drawing.Point(12, 83);
             this.assetEdit_Lbl.Name = "assetEdit_Lbl";
             this.assetEdit_Lbl.Size = new System.Drawing.Size(174, 13);
             this.assetEdit_Lbl.TabIndex = 4;
@@ -347,7 +348,7 @@
             // hardwareAsset_ComboBox
             // 
             this.hardwareAsset_ComboBox.FormattingEnabled = true;
-            this.hardwareAsset_ComboBox.Location = new System.Drawing.Point(15, 99);
+            this.hardwareAsset_ComboBox.Location = new System.Drawing.Point(15, 144);
             this.hardwareAsset_ComboBox.Name = "hardwareAsset_ComboBox";
             this.hardwareAsset_ComboBox.Size = new System.Drawing.Size(121, 21);
             this.hardwareAsset_ComboBox.TabIndex = 5;
@@ -370,12 +371,25 @@
             this.hardwareCalendar.Visible = false;
             this.hardwareCalendar.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.hardwareCalendar_DateSelected);
             // 
+            // back_Button
+            // 
+            this.back_Button.BackColor = System.Drawing.Color.SandyBrown;
+            this.back_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.back_Button.Location = new System.Drawing.Point(15, 46);
+            this.back_Button.Name = "back_Button";
+            this.back_Button.Size = new System.Drawing.Size(75, 23);
+            this.back_Button.TabIndex = 9;
+            this.back_Button.Text = "Back";
+            this.back_Button.UseVisualStyleBackColor = false;
+            this.back_Button.Click += new System.EventHandler(this.back_Button_Click);
+            // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.back_Button);
             this.Controls.Add(this.hardwareCalendar);
             this.Controls.Add(this.softwareCalendar);
             this.Controls.Add(this.editHardwarePanel);
@@ -432,5 +446,6 @@
         private System.Windows.Forms.Label hardwareManufacturer_Label;
         private System.Windows.Forms.Label hardwareModel_Label;
         private System.Windows.Forms.Label hardwareName_Label;
+        private System.Windows.Forms.Button back_Button;
     }
 }
