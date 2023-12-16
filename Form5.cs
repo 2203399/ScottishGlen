@@ -146,7 +146,7 @@ namespace WindowsFormsApp1
             string license = getSingleItemFromDatabase(licenseQuery, connectionString);
             softwareLicenseInfo_TextBox.Text = license.ToString();
 
-            string purchaseQuery = "SELECT purchase_date FROM SoftwareAssets WHERE name = '" + selectedAsset + "'";
+            string purchaseQuery = "SELECT DATE_FORMAT(purchase_date, '%Y-%m-%d') AS formattedDate FROM SoftwareAssets WHERE name = '" + selectedAsset + "'";
             string purchaseDate = getSingleItemFromDatabase(purchaseQuery, connectionString);
             softwarePurchaseDate_TextBox.Text = purchaseDate.ToString();
 
@@ -168,29 +168,37 @@ namespace WindowsFormsApp1
             string selectedAsset = hardwareAsset_ComboBox.SelectedItem.ToString();
             hardwareName_TextBox.Text = selectedAsset;
 
-            string modelQuery = "SELECT model FROM HardwareAssets";
+            string modelQuery = "SELECT model FROM HardwareAssets WHERE name = '" + selectedAsset + "'";
             string model = getSingleItemFromDatabase(modelQuery, connectionString);
             hardwareModel_TextBox.Text = model.ToString();
 
-            string manufacturerQuery = "SELECT manufacturer FROM HardwareAssets";
+            string manufacturerQuery = "SELECT manufacturer FROM HardwareAssets WHERE name = '" + selectedAsset + "'";
             string manufacturer = getSingleItemFromDatabase(manufacturerQuery, connectionString);
             hardwareManufacturer_TextBox.Text = manufacturer.ToString();
 
-            string typeQuery = "SELECT type FROM HardwareAssets";
+            string typeQuery = "SELECT type FROM HardwareAssets WHERE name = '" + selectedAsset + "'";
             string type = getSingleItemFromDatabase(typeQuery, connectionString);
             hardwareType_TextBox.Text = type.ToString();
 
-            string ipQuery = "SELECT ip_address FROM HardwareAssets";
+            string ipQuery = "SELECT ip_address FROM HardwareAssets WHERE name = '" + selectedAsset + "'";
             string ip = getSingleItemFromDatabase(ipQuery, connectionString);
             hardwareIpAddress_TextBox.Text = ip.ToString();
 
-            string purchaseQuery = "SELECT purchase_date FROM HardwareAssets";
+            string purchaseQuery = "SELECT DATE_FORMAT(purchase_date, '%Y-%m-%d') AS formattedDate FROM HardwareAssets WHERE name = '" + selectedAsset + "'";
             string purchase = getSingleItemFromDatabase(purchaseQuery, connectionString);
             hardwarePurchaseDate_TextBox.Text = purchase.ToString();
 
-            string addQuery = "SELECT additional_notes FROM HardwareAssets";
+            string addQuery = "SELECT COALESCE(additional_notes, '') FROM HardwareAssets WHERE name = '" + selectedAsset + "'";
             string addNotes = getSingleItemFromDatabase(addQuery, connectionString);
             hardwareAddNotes_TextBox.Text = addNotes.ToString();
+
+            hardwareName_TextBox.TextChanged += textChanged;
+            hardwareModel_TextBox.TextChanged += textChanged;
+            hardwareManufacturer_TextBox.TextChanged += textChanged;
+            hardwareType_TextBox.TextChanged += textChanged;
+            hardwareIpAddress_TextBox.TextChanged += textChanged;
+            hardwarePurchaseDate_TextBox.TextChanged += textChanged;
+            hardwareAddNotes_TextBox.TextChanged += textChanged;
         }
     }
 }
