@@ -31,6 +31,8 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.back_Button = new System.Windows.Forms.Button();
+            this.nist_Button = new System.Windows.Forms.Button();
+            this.nist_ListBox = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,12 +68,36 @@
             this.back_Button.UseVisualStyleBackColor = false;
             this.back_Button.Click += new System.EventHandler(this.back_Button_Click_1);
             // 
+            // nist_Button
+            // 
+            this.nist_Button.BackColor = System.Drawing.Color.SandyBrown;
+            this.nist_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.nist_Button.Location = new System.Drawing.Point(431, 38);
+            this.nist_Button.Name = "nist_Button";
+            this.nist_Button.Size = new System.Drawing.Size(120, 54);
+            this.nist_Button.TabIndex = 3;
+            this.nist_Button.Text = "Search for any vulnerabilities";
+            this.nist_Button.UseVisualStyleBackColor = false;
+            this.nist_Button.Visible = false;
+            this.nist_Button.Click += new System.EventHandler(this.nist_Button_Click);
+            // 
+            // nist_ListBox
+            // 
+            this.nist_ListBox.FormattingEnabled = true;
+            this.nist_ListBox.Location = new System.Drawing.Point(572, 38);
+            this.nist_ListBox.Name = "nist_ListBox";
+            this.nist_ListBox.Size = new System.Drawing.Size(224, 147);
+            this.nist_ListBox.TabIndex = 4;
+            this.nist_ListBox.Visible = false;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(838, 450);
+            this.Controls.Add(this.nist_ListBox);
+            this.Controls.Add(this.nist_Button);
             this.Controls.Add(this.back_Button);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.comboBox1);
@@ -88,5 +114,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button back_Button;
+        private System.Windows.Forms.Button nist_Button;
+        private System.Windows.Forms.ListBox nist_ListBox;
     }
 }
