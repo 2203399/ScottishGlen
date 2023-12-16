@@ -43,7 +43,10 @@ namespace WindowsFormsApp1
 
         private void delete_Btn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("To be implemented in part 3");
+            this.Hide();
+            Form6 form6 = new Form6();
+            form6.ShowDialog();
+            form6.Show();
         }
 
         private void logout_Btn_Click(object sender, EventArgs e)
