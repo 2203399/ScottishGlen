@@ -212,6 +212,11 @@ namespace WindowsFormsApp1
             form2.Show();
         }
 
+        private void Form5_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void edit_Button_Click(object sender, EventArgs e)
         {
             if (edit_Button.Enabled == false)

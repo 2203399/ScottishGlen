@@ -401,6 +401,7 @@
             this.Controls.Add(this.hsAsset_ComboBox);
             this.Name = "Form5";
             this.Text = "Form5";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form5_FormClosing);
             this.Load += new System.EventHandler(this.Form5_Load);
             this.editSoftwarePanel.ResumeLayout(false);
             this.editSoftwarePanel.PerformLayout();
