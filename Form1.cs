@@ -23,23 +23,30 @@ namespace WindowsFormsApp1
 
         }
 
+        private static string GetIP()
+        {
+            IPHostEntry host;
+            string localIP = "";
+            host = Dns.GetHostEntry(Dns.GetHostName());
+
+            foreach (IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily.ToString() == "InterNetwork")
+                {
+                    localIP = ip.ToString();
+                }
+            }
+            return localIP;
+        }
+
        
 
         private void login_Btn_Click(object sender, EventArgs e)
         {
             if(string.Equals(username_TxtBox.Text, "username") && string.Equals(password_TxtBox.Text, "password")) {
 
-                IPHostEntry host;
-                string localIP = "";
-                host = Dns.GetHostEntry(Dns.GetHostName());
 
-                foreach (IPAddress ip in host.AddressList)
-                {
-                    if(ip.AddressFamily.ToString() == "InterNetwork")
-                    {
-                        localIP = ip.ToString();
-                    }
-                }
+                GetIP();
 
 
                 
