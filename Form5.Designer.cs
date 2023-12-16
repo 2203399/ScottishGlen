@@ -125,7 +125,7 @@
             this.editHardwarePanel.Controls.Add(this.hardwareManufacturer_Label);
             this.editHardwarePanel.Controls.Add(this.hardwareModel_Label);
             this.editHardwarePanel.Controls.Add(this.hardwareName_Label);
-            this.editHardwarePanel.Location = new System.Drawing.Point(254, 46);
+            this.editHardwarePanel.Location = new System.Drawing.Point(260, 46);
             this.editHardwarePanel.Name = "editHardwarePanel";
             this.editHardwarePanel.Size = new System.Drawing.Size(242, 341);
             this.editHardwarePanel.TabIndex = 6;
@@ -312,6 +312,7 @@
             // 
             // edit_Button
             // 
+            this.edit_Button.BackColor = System.Drawing.Color.SandyBrown;
             this.edit_Button.Enabled = false;
             this.edit_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.edit_Button.Location = new System.Drawing.Point(15, 364);
@@ -319,7 +320,7 @@
             this.edit_Button.Size = new System.Drawing.Size(75, 23);
             this.edit_Button.TabIndex = 2;
             this.edit_Button.Text = "Edit";
-            this.edit_Button.UseVisualStyleBackColor = true;
+            this.edit_Button.UseVisualStyleBackColor = false;
             this.edit_Button.Click += new System.EventHandler(this.edit_Button_Click);
             // 
             // hsAsset_ComboBox
@@ -373,6 +374,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.hardwareCalendar);
             this.Controls.Add(this.softwareCalendar);
