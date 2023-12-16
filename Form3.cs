@@ -29,7 +29,8 @@ namespace WindowsFormsApp1
         {
             if (comboBox1.SelectedIndex == 0)
             {
-               
+               nist_Button.Visible = false;
+               nist_ListBox.Visible = false;
                 // Create a new MySqlConnection
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
@@ -148,21 +149,16 @@ namespace WindowsFormsApp1
             {
                 try
                 {
-                    // Send a GET request to the NIST NVD API
-                    HttpResponseMessage response = await client.GetAsync($"https://services.nvd.nist.gov/rest/json/cves/1.1?keyword={keyword}");
+                    
+                    HttpResponseMessage response = await client.GetAsync($"https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch={keyword}");
 
                     // Check if the request was successful
                     if (response.IsSuccessStatusCode)
                     {
-                        // Read the response content as a string
                         string responseContent = await response.Content.ReadAsStringAsync();
-
-                        // Parse the JSON response
                         var jsonData = JsonDocument.Parse(responseContent);
-
                         // Get the array of vulnerabilities from the JSON response
                         JsonElement vulnerabilitiesArray = jsonData.RootElement.GetProperty("result").GetProperty("CVE_Items");
-
                         // Loop through each vulnerability and add it to the ListBox
                         foreach (JsonElement vulnerabilityElement in vulnerabilitiesArray.EnumerateArray())
                         {
@@ -190,4 +186,4 @@ namespace WindowsFormsApp1
         }
     }
     }
-}
+
