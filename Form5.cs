@@ -23,13 +23,14 @@ namespace WindowsFormsApp1
 
         private void Form5_Load(object sender, EventArgs e)
         {
-            softwareAddNotes_TextBox.TextChanged += textChanged;
+            
 
         }
 
         private void textChanged(object sender, EventArgs e)
         {
-
+            fieldChange = true;
+            edit_Button.Enabled = true;
         }
 
         public string getSingleItemFromDatabase(string query, string connectionString)
@@ -91,6 +92,7 @@ namespace WindowsFormsApp1
                 hsAsset_ComboBox.Visible = false;
                 softwareCalendar.Visible = true;
                 softwareAsset_ComboBox.Visible = true;
+                editSoftwarePanel.Visible = true;
                 string query = "SELECT name FROM SoftwareAssets";
 
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -136,21 +138,28 @@ namespace WindowsFormsApp1
             string selectedAsset = softwareAsset_ComboBox.SelectedItem.ToString();
             softwareName_TextBox.Text = selectedAsset;
             
-            string query = "SELECT version FROM SoftwareAssets";
+            string query = "SELECT version FROM SoftwareAssets WHERE name = '" + selectedAsset + "'";
             string version = getSingleItemFromDatabase(query, connectionString);
             softwareVersion_TextBox.Text = version.ToString();
 
-            string licenseQuery = "SELECT license_info FROM SoftwareAssets";
+            string licenseQuery = "SELECT license_info FROM SoftwareAssets WHERE name = '" + selectedAsset + "'";
             string license = getSingleItemFromDatabase(licenseQuery, connectionString);
             softwareLicenseInfo_TextBox.Text = license.ToString();
 
-            string purchaseQuery = "SELECT purchase_date FROM SoftwareAssets";
+            string purchaseQuery = "SELECT purchase_date FROM SoftwareAssets WHERE name = '" + selectedAsset + "'";
             string purchaseDate = getSingleItemFromDatabase(purchaseQuery, connectionString);
             softwarePurchaseDate_TextBox.Text = purchaseDate.ToString();
 
-            string addNotesQuery = "SELECT additional_notes FROM SoftwareAssets";
+            string addNotesQuery = "SELECT COALESCE(additional_notes, '') FROM SoftwareAssets WHERE name = '" + selectedAsset + "'";
             string addNotes = getSingleItemFromDatabase(addNotesQuery, connectionString);
             softwareAddNotes_TextBox.Text = addNotes.ToString();
+           
+
+            softwareName_TextBox.TextChanged += textChanged;
+            softwareVersion_TextBox.TextChanged += textChanged;
+            softwareLicenseInfo_TextBox.TextChanged += textChanged;
+            softwarePurchaseDate_TextBox.TextChanged += textChanged;
+            softwareAddNotes_TextBox.TextChanged += textChanged;
 
         }
 
