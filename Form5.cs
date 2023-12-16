@@ -9,6 +9,7 @@ using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
@@ -219,8 +220,9 @@ namespace WindowsFormsApp1
                     string license = softwareLicenseInfo_TextBox.Text;
                     string purchaseDate = softwarePurchaseDate_TextBox.Text;
                     string notes = softwareAddNotes_TextBox.Text;
+                    string c = ".NET";
 
-                    string query = "UPDATE SoftwareAssets SET name = @name, version = @version, license_info = @license, purhcase_date = @purchaseDate, additional_notes = @notes WHERE name = '" + selectedSAsset + "'";
+                    string query = "UPDATE SoftwareAssets SET name = @name, version = @version, license_info = @license, purchase_date = @purchaseDate, additional_notes = @notes WHERE name = @c";
                     using (MySqlConnection connection = new MySqlConnection(connectionString))
                     {
                         using (MySqlCommand command = new MySqlCommand(query, connection))
@@ -230,6 +232,19 @@ namespace WindowsFormsApp1
                             command.Parameters.AddWithValue("@license", license);
                             command.Parameters.AddWithValue("@purchaseDate", purchaseDate);
                             command.Parameters.AddWithValue("@notes", notes);
+                            command.Parameters.AddWithValue("@c", c);
+                            MessageBox.Show("Data added to database");
+
+                            try
+                            {
+                                connection.Open();
+                                int rowsAffected = command.ExecuteNonQuery();
+                                MessageBox.Show("Data updated successfully. Rows affected: " + rowsAffected);
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Error: " + ex.Message);
+                            }
                         }
                     }
                 }
