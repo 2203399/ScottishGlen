@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace WindowsFormsApp1
     public partial class Form5 : Form
     {
         public string connectionString = "server=lochnagar.abertay.ac.uk;uid=sql2203399;pwd=oJ8HnTiBzB68;database=sql2203399;";
+        public string selectedHAsset, selectedSAsset;
         private bool fieldChange = false;
         public Form5()
         {
@@ -135,22 +137,22 @@ namespace WindowsFormsApp1
 
         private void softwareAsset_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedAsset = softwareAsset_ComboBox.SelectedItem.ToString();
-            softwareName_TextBox.Text = selectedAsset;
+            selectedSAsset = softwareAsset_ComboBox.SelectedItem.ToString();
+            softwareName_TextBox.Text = selectedSAsset;
             
-            string query = "SELECT version FROM SoftwareAssets WHERE name = '" + selectedAsset + "'";
+            string query = "SELECT version FROM SoftwareAssets WHERE name = '" + selectedSAsset + "'";
             string version = getSingleItemFromDatabase(query, connectionString);
             softwareVersion_TextBox.Text = version.ToString();
 
-            string licenseQuery = "SELECT license_info FROM SoftwareAssets WHERE name = '" + selectedAsset + "'";
+            string licenseQuery = "SELECT license_info FROM SoftwareAssets WHERE name = '" + selectedSAsset + "'";
             string license = getSingleItemFromDatabase(licenseQuery, connectionString);
             softwareLicenseInfo_TextBox.Text = license.ToString();
 
-            string purchaseQuery = "SELECT DATE_FORMAT(purchase_date, '%Y-%m-%d') AS formattedDate FROM SoftwareAssets WHERE name = '" + selectedAsset + "'";
+            string purchaseQuery = "SELECT DATE_FORMAT(purchase_date, '%Y-%m-%d') AS formattedDate FROM SoftwareAssets WHERE name = '" + selectedSAsset + "'";
             string purchaseDate = getSingleItemFromDatabase(purchaseQuery, connectionString);
             softwarePurchaseDate_TextBox.Text = purchaseDate.ToString();
 
-            string addNotesQuery = "SELECT COALESCE(additional_notes, '') FROM SoftwareAssets WHERE name = '" + selectedAsset + "'";
+            string addNotesQuery = "SELECT COALESCE(additional_notes, '') FROM SoftwareAssets WHERE name = '" + selectedSAsset + "'";
             string addNotes = getSingleItemFromDatabase(addNotesQuery, connectionString);
             softwareAddNotes_TextBox.Text = addNotes.ToString();
            
@@ -165,30 +167,30 @@ namespace WindowsFormsApp1
 
         private void hardwareAsset_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedAsset = hardwareAsset_ComboBox.SelectedItem.ToString();
-            hardwareName_TextBox.Text = selectedAsset;
+            selectedHAsset = hardwareAsset_ComboBox.SelectedItem.ToString();
+            hardwareName_TextBox.Text = selectedHAsset;
 
-            string modelQuery = "SELECT model FROM HardwareAssets WHERE name = '" + selectedAsset + "'";
+            string modelQuery = "SELECT model FROM HardwareAssets WHERE name = '" + selectedHAsset + "'";
             string model = getSingleItemFromDatabase(modelQuery, connectionString);
             hardwareModel_TextBox.Text = model.ToString();
 
-            string manufacturerQuery = "SELECT manufacturer FROM HardwareAssets WHERE name = '" + selectedAsset + "'";
+            string manufacturerQuery = "SELECT manufacturer FROM HardwareAssets WHERE name = '" + selectedHAsset + "'";
             string manufacturer = getSingleItemFromDatabase(manufacturerQuery, connectionString);
             hardwareManufacturer_TextBox.Text = manufacturer.ToString();
 
-            string typeQuery = "SELECT type FROM HardwareAssets WHERE name = '" + selectedAsset + "'";
+            string typeQuery = "SELECT type FROM HardwareAssets WHERE name = '" + selectedHAsset + "'";
             string type = getSingleItemFromDatabase(typeQuery, connectionString);
             hardwareType_TextBox.Text = type.ToString();
 
-            string ipQuery = "SELECT ip_address FROM HardwareAssets WHERE name = '" + selectedAsset + "'";
+            string ipQuery = "SELECT ip_address FROM HardwareAssets WHERE name = '" + selectedHAsset + "'";
             string ip = getSingleItemFromDatabase(ipQuery, connectionString);
             hardwareIpAddress_TextBox.Text = ip.ToString();
 
-            string purchaseQuery = "SELECT DATE_FORMAT(purchase_date, '%Y-%m-%d') AS formattedDate FROM HardwareAssets WHERE name = '" + selectedAsset + "'";
+            string purchaseQuery = "SELECT DATE_FORMAT(purchase_date, '%Y-%m-%d') AS formattedDate FROM HardwareAssets WHERE name = '" + selectedHAsset + "'";
             string purchase = getSingleItemFromDatabase(purchaseQuery, connectionString);
             hardwarePurchaseDate_TextBox.Text = purchase.ToString();
 
-            string addQuery = "SELECT COALESCE(additional_notes, '') FROM HardwareAssets WHERE name = '" + selectedAsset + "'";
+            string addQuery = "SELECT COALESCE(additional_notes, '') FROM HardwareAssets WHERE name = '" + selectedHAsset + "'";
             string addNotes = getSingleItemFromDatabase(addQuery, connectionString);
             hardwareAddNotes_TextBox.Text = addNotes.ToString();
 
@@ -199,6 +201,41 @@ namespace WindowsFormsApp1
             hardwareIpAddress_TextBox.TextChanged += textChanged;
             hardwarePurchaseDate_TextBox.TextChanged += textChanged;
             hardwareAddNotes_TextBox.TextChanged += textChanged;
+        }
+
+        private void edit_Button_Click(object sender, EventArgs e)
+        {
+            if (edit_Button.Enabled == false)
+            {
+                MessageBox.Show("No data has been edited");
+            }
+
+            else
+            {
+                if (editSoftwarePanel.Visible == true)
+                {
+
+                }
+
+                else if (editHardwarePanel.Visible == true) {
+                    string name = hardwareName_TextBox.Text;
+                    string model = hardwareModel_TextBox.Text;
+                    string manufacturer = hardwareManufacturer_TextBox.Text;
+                    string type = hardwareType_TextBox.Text;
+                    string ip = hardwareIpAddress_TextBox.Text;
+                    string purchaseDate = hardwarePurchaseDate_TextBox.Text;
+                    string notes = hardwareAddNotes_TextBox.Text;
+
+                    string query = "UPDATE HardwareAssets SET mame = @name, model = @model, manufacturer = @manufacturer, type = @type, ip = @ip, purchase_date = @purchaseDate, additional_notes = @notes WHERE name = @selectedHAsset";
+                    using (MySqlConnection connection = new MySqlConnection(connectionString))
+                    {
+                        using (MySqlCommand command = new MySqlCommand(query, connection))
+                        {
+
+                        }
+                    }
+                }
+            }
         }
     }
 }

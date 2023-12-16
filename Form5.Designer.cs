@@ -320,6 +320,7 @@
             this.edit_Button.TabIndex = 2;
             this.edit_Button.Text = "Edit";
             this.edit_Button.UseVisualStyleBackColor = true;
+            this.edit_Button.Click += new System.EventHandler(this.edit_Button_Click);
             // 
             // hsAsset_ComboBox
             // 
