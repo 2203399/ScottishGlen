@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
+using System.IO;
 
 namespace WindowsFormsApp1
 {
@@ -46,10 +47,32 @@ namespace WindowsFormsApp1
             if(string.Equals(username_TxtBox.Text, "username") && string.Equals(password_TxtBox.Text, "password")) {
 
 
-                GetIP();
+                string ipAddress = GetIP();
+                string machineName = Environment.MachineName; // reference https://learn.microsoft.com/en-us/dotnet/api/system.environment.machinename?view=net-8.0#system-environment-machinename
+                string osVersion = Environment.OSVersion.ToString();
+                string processorCount = Environment.ProcessorCount.ToString();
+
+                string filePath = "output.txt"; // Specify the path of the output file
+
+                try
+                {
+                    using (StreamWriter writer = new StreamWriter(filePath))
+                    {
+                        writer.WriteLine("IP Address: " + ipAddress);
+                        writer.WriteLine("Machine Name: " + machineName);
+                        writer.WriteLine("OS Version: " + osVersion);
+                        writer.WriteLine("Processor Count: " + processorCount);
+                    }
+
+                    MessageBox.Show("Information written to the file successfully.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error writing to the file: " + ex.Message);
+                }
 
 
-                
+
 
                 this.Hide();
                 Form2 form2 = new Form2();
